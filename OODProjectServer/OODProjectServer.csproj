@@ -6,14 +6,40 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Controllers.Test\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.29" />
+    <PackageReference Include="Okta.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="EntityFramework.SqlServerCompact" Version="6.2.0" />
+    <PackageReference Include="Microsoft.WindowsAzure.Management.Sql" Version="5.2.0" />
+    <PackageReference Include="NUnit.Console" Version="3.9.0" />
+    <PackageReference Include="NUnit.ConsoleRunner" Version="3.9.0" />
+    <PackageReference Include="NUnit" Version="3.11.0" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Models\EmptyClass.cs" />
+    <Compile Remove="Interfaces\EmptyClass.cs" />
+    <Compile Remove="Helpers\MyDependency.cs" />
+    <Compile Remove="Interfaces\IMyDependency.cs" />
+    <Compile Remove="Helpers\SqlHelpers\InventorySqlHelper.cs" />
+    <Compile Remove="Helpers\SqlHelpers\CoffeeSqlHelper.cs" />
+    <Compile Remove="Models\CoffeeContext.cs" />
+    <Compile Remove="Models\CoffeeItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Production.config" />
+    <Content Remove="appsettings.Production.json" />
+    <Content Remove="appsettings.Production" />
+  </ItemGroup>
 </Project>
